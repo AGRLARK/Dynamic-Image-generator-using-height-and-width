@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 
 const ImageChanger = () => {
     const [width, setWidth] = useState(200);
