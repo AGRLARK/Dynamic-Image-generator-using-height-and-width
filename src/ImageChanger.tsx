@@ -5,21 +5,21 @@ const ImageChanger = () => {
     const [height, setHeight] = useState(200);
     const [grayscale, setGrayScale] = useState(false);
 
-    const ImageUrl = `https://picsum.photos/${width}/${height}${grayscale ? "?grayscale" : ""} `;
+    const imageUrl = `https://picsum.photos/${width}/${height}${grayscale ? "?grayscale" : ""}`;
     return (
         <div>
             Dynnamic Image
             <div>
                 <div>
                     <label >Width :
-                        <input type="number" value={width} onChange={(e) => setWidth(e.target.value)}
+                        <input type="number" value={width} onChange={(e) => setWidth(Number(e.target.value) || 0)}
                         />
                     </label>
                 </div>
                 <div>
                     <label >Height :
 
-                        <input type="number" value={height} onChange={(e) => setHeight(e.target.value)} />
+                        <input type="number" value={height} onChange={(e) => setHeight(Number(e.target.value) || 0)} />
 
                     </label>
                 </div>
@@ -30,7 +30,7 @@ const ImageChanger = () => {
                     </label>
                 </div>
 
-                <img src={ImageUrl} alt='Random from Image' width={width} height={height} />
+                <img src={imageUrl} alt='Random from Image' width={width} height={height} />
 
             </div>
         </div>
